@@ -3,16 +3,18 @@
 #include <SPI.h>
 #include <Pixy.h>
 #include <Servo.h>
+#include <Adafruit_NeoPixel.h>
 //#include "pitches.h"
 
 //DEFINES
-#define PAN_SERVO 9
-#define TILT_SERVO 10
-#define BUZZER 3
-#define LEFT_BUTTON 2
+#define PAN_SERVO    9
+#define TILT_SERVO   10
+#define BUZZER       3
+#define LEFT_BUTTON  2
 #define RIGHT_BUTTON 4
-#define LEFT_LED 5
-#define RIGHT_LED 6
+#define LEFT_LED     5
+#define RIGHT_LED    6
+#define NEOPIXEL     3
 
 //DEFINE NOTES
 #define NOTE_B0  31
@@ -135,6 +137,7 @@ boolean rightLastState = LOW;
 Pixy pixy;
 Servo panServo;
 Servo tiltServo;
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(1, NEOPIXEL, NEO_KHZ400);
 
 //SETUP
 void setup()
@@ -146,6 +149,8 @@ void setup()
   pinMode(rightButton, INPUT);
   pinMode(leftLed, OUTPUT);
   pinMode(rightLed, OUTPUT);
+  pixels.begin();
+  pixels.show(); // Initialize all pixels to 'off'
 }
 
 //LOOP
@@ -164,7 +169,7 @@ void loop()
   delay(2);
   leftLastState = leftCurrentState;
   
-    //READ RIGHT BUTTON
+  //READ RIGHT BUTTON
   rightCurrentState = digitalRead(rightButton);
   if (rightCurrentState == HIGH && rightLastState == LOW)
   {
@@ -218,6 +223,8 @@ void track()
     //PESTERCHUM ON CENTERED FIRST COLOR
     if ((pixy.blocks[0].y > 90) && (pixy.blocks[0].y < 110) && (pixy.blocks[0].x > 145) && (pixy.blocks[0].x < 175) && (helodyPlayed < 1))
     {
+      pixels.setPixelColor(0, 0, 0, 255);
+      pixels.show();
       for (int thisNote = 0; thisNote < 3; thisNote++)
       {
       // to calculate the note duration, take one second 
@@ -237,6 +244,8 @@ void track()
     else
     {
     helodyPlayed = 0;
+    pixels.setPixelColor(0, 0, 0, 0);
+    pixels.show();
     }
   }  
 
