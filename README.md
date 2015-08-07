@@ -1,5 +1,5 @@
 # Heelo
-Heelo is an Arduino-based pan/tilt robot that uses a Pixy for color object tracking.
+Heelo is an Arduino-based pan/tilt robot that uses a Pixy for color object tracking. Heelo is different from similar Pixy-based Pan/Tilt robots because he uses a continuous rotation servo for panning, and an onboard LiPo allowing him to endlessly turn in any direction, untethered by data and power cords. Eventually Heelo will also play games. 
 This is my first real project, please be gentle.
 ![Heelo](http://wade.datablue.net/images/projects/robotics/heelo/Heelo.jpg)
 
