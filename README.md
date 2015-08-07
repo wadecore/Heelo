@@ -12,6 +12,7 @@ This is my first real project, please be gentle.
 |    1x | RobotGeek Buzzer                                 |
 |    2x | RobotGeek Push Button                            |
 |    2x | RobotGeek LED Driver                             |
+|    1x | Adafruit NeoPixel                                |
 |    ?x | brackets, standoffs, and acrylic plates          |
 
 # Goals
