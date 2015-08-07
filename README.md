@@ -1,7 +1,7 @@
 # Heelo
 Heelo is an Arduino-based pan/tilt robot that uses a Pixy for color object tracking.
 This is my first real project, please be gentle.
-![Heelo](https://drive.google.com/file/d/0B6l8R3QFgjrZMTRpWk8zeWxkajg/view?usp=sharing)
+![Heelo](http://wade.datablue.net/images/projects/robotics/heelo/Heelo.jpg)
 
 # Parts
 | Count | Component                                                   | 
